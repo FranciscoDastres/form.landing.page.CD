@@ -11,7 +11,6 @@
 
 <body>
   <div class="container mt-5" style="position: relative;">
-    <!-- SVG que queremos posicionar -->
     <svg class="svg-right" width="242" height="331" viewBox="0 0 242 331" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -22,36 +21,32 @@
         fill="#121519" fill-opacity=".07"></path>
     </svg>
 
-
     <div class="container mt-5 bg-info">
-
       <h1 class="mb-4">Formulario de Contacto</h1>
-      <form>
+      <form id="contactForm">
         <div class="row g-4">
           <div class="form-group col-md-6 col-12">
-            <label for="nombre">Nombre*</label>
+            <label class="form-name" for="nombre">Nombre*</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre Completo" required>
           </div>
           <div class="form-group col-md-6 col-12">
-            <label for="email">Email*</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico"
-              required>
+            <label class="form-name" for="email">Email*</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
           </div>
           <div class="form-group col-md-6 col-12">
-            <label for="telefono">Celular*</label>
-            <input type="tel" class="form-control" id="telefono" name="telefono"
-              placeholder="Ingresa tu número de celular" required>
+            <label class="form-name" for="telefono">Celular*</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingresa tu número de celular" required>
           </div>
           <div class="form-group col-md-6 col-12">
-            <label for="compania">Empresa</label>
+            <label class="form-name" for="empresa">Empresa</label>
             <input type="text" class="form-control" id="empresa" name="empresa" placeholder="El nombre de tu empresa">
           </div>
-          <div class="form-group col-md-6 col-12">
-            <label for="sitioWeb">Sitio web</label>
+          <div class="form-group col-12">
+            <label class="form-name" for="sitioWeb">Sitio web</label>
             <input type="text" class="form-control" id="sitioWeb" name="sitioWeb" placeholder="Ingresa tu sitio web">
           </div>
           <div class="form-group col-12">
-            <label for="tipoProyecto">Tipo de Proyecto</label>
+            <label class="form-name" for="tipoProyecto">Tipo de Proyecto</label>
             <select class="form-control" id="tipoProyecto" name="tipoProyecto" required>
               <option value="">Selecciona el tipo de proyecto</option>
               <option value="desarrolloWeb">Desarrollo web</option>
@@ -62,14 +57,12 @@
             </select>
             <div id="projectSpecify" style="display: none;">
               <label for="projectOther">Especificar</label>
-              <input type="text" class="form-control" id="projectOther" name="projectOther"
-                placeholder="Específica el servicio requerido">
+              <input type="text" class="form-control" id="projectOther" name="projectOther" placeholder="Específica el servicio requerido">
             </div>
           </div>
           <div class="form-group col-12">
-            <label for="about">Descripcion del Proyecto</label>
-            <textarea class="form-control" id="about" name="about" rows="4"
-              placeholder="Indícanos con detalles tu proyecto"></textarea>
+            <label for="about">Descripción del Proyecto</label>
+            <textarea class="form-control" id="about" name="about" rows="4" placeholder="Indícanos con detalles tu proyecto"></textarea>
           </div>
           <div class="form-group col-12">
             <label for="howFindUs">¿Cómo nos encontraste?</label>
@@ -82,8 +75,7 @@
             </select>
             <div id="findUsSpecify" style="display: none;">
               <label for="findUsOther">Especificar</label>
-              <input type="text" class="form-control" id="findUsOther" name="findUsOther"
-                placeholder="Específica cómo nos encontraste">
+              <input type="text" class="form-control" id="findUsOther" name="findUsOther" placeholder="Específica cómo nos encontraste">
             </div>
           </div>
         </div>
@@ -92,6 +84,7 @@
         </div>
       </form>
     </div>
+
     <svg class="svg-bottom-left" width="169" height="217" viewBox="0 0 169 217" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -101,12 +94,31 @@
         d="M147.005 75.6331C152.135 70.7783 156.106 64.2374 159.153 57.9073C166.014 43.6372 174.127 22.1368 160.207 9.68505C152.924 3.17188 139.243 3.86644 130.324 5.29774C118.428 7.20428 107.295 8.85077 96.5031 14.783C85.8056 20.6599 79.0155 33.6997 77.0014 45.6686C75.4978 54.5776 79.63 63.6672 84.7391 70.7453C91.8208 80.5571 103.503 84.2003 114.817 84.3975C121.101 84.5081 127.716 84.0527 133.89 82.8121C138.932 81.7962 143.273 79.1597 147.005 75.6331Z"
         fill="#121519" fill-opacity="0.07"></path>
     </svg>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="/assets/js/script.js"></script>
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Gracias por tu mensaje</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Tu formulario ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </div>
 </body>
 
 </html>
