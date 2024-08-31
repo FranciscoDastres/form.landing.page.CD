@@ -5,7 +5,7 @@ handleSelectChange = (selectId, specifyDivId, otherInputId) => {
 
   selectElement.addEventListener('change', (event) => {
     if (event.target.value === 'otra') {
-      specifyDiv.style.display = 'block';
+      specifyDiv.style.display = '';
       otherInput.required = true;
     } else {
       specifyDiv.style.display = 'none';
