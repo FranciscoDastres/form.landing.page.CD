@@ -1,0 +1,32 @@
+.container{
+  background-color: info;
+  border-radius: 4%;
+}
+.svg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Ajusta el tamaño y los márgenes según sea necesario */
+  width: 242px;
+  height: 331px;
+}
+
+.svg-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* Ajusta el tamaño y los márgenes según sea necesario */
+  width: 169px;
+  height: 217px;
+}
+
+.form-control{
+  width: 75%;
+}
+h1{
+  text-align: center;
+}
+
+.containerButton{
+  text-align: center;
+}
